@@ -145,26 +145,6 @@ body {
     pointer-events: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero h2 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-}
-
 /* About Section */
 .about {
     padding: 60px 20px;
@@ -175,5 +155,128 @@ body {
 .about h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    position: relative;
-    display:
+}
+
+/* Education Section */
+.education {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.education h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.education-item {
+    margin-bottom: 20px;
+}
+
+.education-item h3 {
+    font-size: 1.5em;
+    color: #003366;
+}
+
+/* Experience Section */
+.experience {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.job {
+    margin-bottom: 30px;
+}
+
+.job h3 {
+    font-size: 1.8em;
+    color: #003366;
+}
+
+.link {
+    display: inline-block;
+    color: #006699;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #003366;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: #003366;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+.skill:hover {
+    background: #006699;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+.contact .btn {
+    padding: 10px 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background: #003366;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
