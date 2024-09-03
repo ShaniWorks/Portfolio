@@ -1,88 +1,271 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeeshan Haider - Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="navbar">
-            <div class="logo">
-                <h1>Zeeshan Haider</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <img src="my-pic.jpg" alt="Zeeshan Haider" class="profile-pic">
-            <h2>Zeeshan Haider</h2>
-            <p>Data Scraping, E-Commerce, and Automation Specialist</p>
-            <a href="mailto:zeeshanhaiderrajpoot@gmail.com" class="btn">Contact Me</a>
-        </div>
-        <div class="background-overlay"></div>
-    </section>
-    <section id="education" class="education">
-        <div class="education-container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>ICS</h3>
-                <p>Government Degree College (PeerPhlahi)</p>
-            </div>
-        </div>
-    </section>
-    <section id="experience" class="experience">
-        <div class="experience-container">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Senior E-Commerce Officer</h3>
-                <p>IZOC Solutions Pvt Ltd | Since June 23, 2023</p>
-                <p>Working with various platforms including Amazon, Walmart, Shopify, SellerCloud, eBay, Facebook, and Meta. Utilized Helium 10 for listing creation and optimization.</p>
-            </div>
-            <div class="job">
-                <h3>Data Scraper Development</h3>
-                <p>Designed a data scraper using Python with Beautiful Soup and Requests to extract competitor data from Amazon for analysis.</p>
-                <a href="data-scraper-link" class="link">View Project</a>
-            </div>
-            <div class="job">
-                <h3>Keyword Hunter Tool</h3>
-                <p>Created a tool using Google Sheets and JavaScript for keyword research and optimization in Amazon listings and PPC campaigns.</p>
-                <a href="keyword-hunter-link" class="link">View Tool</a>
-            </div>
-        </div>
-    </section>
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div class="skill">Amazon Product Listing</div>
-            <div class="skill">Amazon PPC</div>
-            <div class="skill">Amazon Listing Optimization</div>
-            <div class="skill">Walmart Listing Creation</div>
-            <div class="skill">Shopify Management</div>
-            <div class="skill">Meta Ads</div>
-            <div class="skill">eBay Listing Optimization</div>
-            <div class="skill">SellerCloud</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">Python</div>
-            <div class="skill">C#</div>
-            <div class="skill">AWS</div>
-        </div>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>If you would like to collaborate or just want to say hello, feel free to reach out!</p>
-        <a href="mailto:zeeshanhaiderrajpoot@gmail.com" class="btn">Send Email</a>
-    </section>
-    <footer class="footer">
-        <p>&copy; 2024 Zeeshan Haider. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+/* General Reset */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+/* Header and Navigation */
+.header {
+    background: #003366; /* Dark Blue */
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: #ffcc00; /* Gold on hover */
+    color: #003366;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: #003366; /* Dark Blue */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 2s ease-in-out;
+    z-index: 2;
+    position: relative;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ffcc00;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 204, 0, 0.8);
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ffcc00;
+    color: #003366;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #ffd633;
+    transform: scale(1.1);
+}
+
+.background-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-pattern.svg');
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Education Section */
+.education {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.education-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.education-item h3 {
+    font-size: 1.5em;
+    color: #003366;
+}
+
+/* Experience Section */
+.experience {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.job {
+    margin-bottom: 30px;
+}
+
+.job h3 {
+    font-size: 1.8em;
+    color: #003366;
+}
+
+.link {
+    display: inline-block;
+    color: #006699;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #003366;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: #003366;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+}
+
+.skill:hover {
+    background: #006699;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+.contact .btn {
+    padding: 10px 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background: #003366;
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
