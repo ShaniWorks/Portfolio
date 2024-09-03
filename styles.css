@@ -9,16 +9,16 @@ body, h1, h2, p, ul, li, a {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f4f4f4;
+    background: #e0f7fa; /* Sky Blue Background */
     color: #333;
 }
 
 /* Header and Navigation */
 .header {
-    background: #00274d; /* Deep Blue */
+    background: #003366; /* Dark Blue */
     color: white;
     padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .navbar {
@@ -31,11 +31,10 @@ body {
 }
 
 .logo h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
-    color: #ffcc00; /* Gold */
-    text-transform: uppercase;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -49,42 +48,56 @@ body {
 .nav-links a {
     color: white;
     font-size: 1.1em;
-    padding: 10px 15px;
-    transition: background 0.3s, color 0.3s;
+    padding: 5px 10px;
+    transition: background 0.3s ease, color 0.3s ease;
     border-radius: 5px;
 }
 
 .nav-links a:hover {
     background: #ffcc00; /* Gold on hover */
-    color: #00274d;
+    color: #003366;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
 }
 
 /* Hero Section */
 .hero {
-    position: relative;
     text-align: center;
     padding: 80px 20px;
-    background: #00274d; /* Deep Blue */
+    background: #003366; /* Dark Blue */
     color: white;
+    position: relative;
     overflow: hidden;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
     animation: fadeInUp 2s ease-in-out;
-    position: relative;
     z-index: 2;
+    position: relative;
 }
 
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 5px solid #ffcc00; /* Gold */
+    border: 4px solid #ffcc00;
     margin-bottom: 20px;
-    box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
-    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .profile-pic:hover {
@@ -100,169 +113,109 @@ body {
 }
 
 .hero p {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #ddd;
     margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background: #ffcc00; /* Gold */
-    color: #00274d;
-    border-radius: 25px;
-    font-size: 1.1em;
-    transition: background 0.3s, transform 0.3s;
+    color: #003366;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background: #ffd633; /* Lighter Gold */
-    transform: scale(1.05);
+    background: #ffd700; /* Brighter Gold */
+    color: #003366;
 }
 
 .background-overlay {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
-/* Section Styles */
-.section {
-    padding: 60px 20px;
-}
-
-.container {
+/* Main Content */
+main {
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-title {
-    font-size: 2.5em;
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    text-align: center;
-    color: #00274d; /* Deep Blue */
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Education Section */
-.education {
-    background: #ffffff;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Experience Section */
-.experience {
-    background: #f9f9f9;
+.about p, .education-item p, .job p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.job {
+.education-item, .job {
     margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInUp 1s ease-in-out;
 }
 
-.job h3 {
-    font-size: 1.8em;
-    color: #00274d; /* Deep Blue */
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.education-item h3, .job h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.education-year {
+    font-style: italic;
+    color: #555;
 }
 
 .link {
-    display: inline-block;
-    color: #006699;
+    color: #003366;
     font-weight: bold;
-    margin-top: 10px;
-    display: block;
-}
-
-.link:hover {
     text-decoration: underline;
-}
-
-/* Skills Section */
-.skills {
-    background: #00274d; /* Deep Blue */
-    color: white;
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 15px;
 }
 
 .skill {
-    background: #003366; /* Darker Blue */
-    color: white;
-    padding: 15px 25px;
-    margin: 10px;
+    background: #fff;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1.2em;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.skill:hover {
-    background: #004080; /* Even Darker Blue */
-    transform: scale(1.05);
-}
-
-/* Contact Section */
-.contact {
-    background: #ffffff;
-    text-align: center;
-}
-
-.contact p {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
-.contact .btn {
-    background: #00274d; /* Deep Blue */
-    color: white;
-}
-
-/* Footer */
-.footer {
-    background: #00274d; /* Deep Blue */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+    box-shadow:
