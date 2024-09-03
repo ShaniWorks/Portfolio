@@ -16,6 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
+    border-bottom: 3px solid #ffcc00; /* Accent color underline */
 }
 
 .nav-links {
@@ -31,6 +32,7 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
@@ -46,6 +48,18 @@ header {
     height: 100vh;
     color: #fff;
     text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
 }
 
 .profile-pic {
@@ -83,10 +97,36 @@ header {
     animation: fadeInUp 0.6s forwards;
 }
 
+/* Scroll animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .section-title {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ffcc00; /* Accent color */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
 }
 
 .skills-container {
@@ -134,16 +174,36 @@ header {
     color: #ffd54f; /* Lighter accent color */
 }
 
-/* Animation keyframes */
-@keyframes fadeInUp {
+/* Scrolling effect animations */
+@keyframes slideInFromLeft {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(-20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply sliding effect */
+.section:nth-child(odd) {
+    animation: slideInFromLeft 0.6s forwards;
+}
+
+.section:nth-child(even) {
+    animation: slideInFromRight 0.6s forwards;
 }
 
 /* Footer styling */
