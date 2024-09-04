@@ -23,29 +23,31 @@
     animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
 }
 
-/* Refined header styling */
+/* Adjust header */
 .header {
     position: fixed;
     left: 0;
     top: 0;
-    padding: 1rem 5%;
+    padding: 2rem 10%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: top 0.3s;
+    transition: top 0.3s ease; /* Smooth transition when hiding/showing header */
 }
 
-/* Disappearing header effect */
-body.scroll-up .header {
-    top: -80px; /* Moves the header out of view */
+/* Hover animations */
+.btn-section .btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-body.scroll-down .header {
-    top: 0; /* Makes the header visible again */
+.skills-section .skill-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
+
 
 
 * {
