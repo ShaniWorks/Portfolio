@@ -1,28 +1,15 @@
-let menubar = document.querySelector('#menu');
-let navbar = document.querySelector('.navbar');
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.querySelector('.text-animation h2 span');
+    const textToType = "I'm Zeeshan Haider, Senior E-Commerce Officer";
+    let index = 0;
 
-menubar.onclick = () => {
-    menubar.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
-
-// Animation for text "I'm Zeeshan Haider, Senior E-Commerce Officer"
-const animatedText = document.querySelector('.text-animation h2');
-const text = "I'm Zeeshan Haider, Senior E-Commerce Officer";
-let index = 0;
-
-function animateText() {
-    if (index < text.length) {
-        animatedText.textContent += text.charAt(index);
-        index++;
-        setTimeout(animateText, 100);
-    } else {
-        setTimeout(() => {
-            animatedText.textContent = '';
-            index = 0;
-            animateText();
-        }, 3000);
+    function typeText() {
+        if (index < textToType.length) {
+            textElement.textContent += textToType.charAt(index);
+            index++;
+            setTimeout(typeText, 100); // Adjust typing speed here (100ms per character)
+        }
     }
-}
 
-window.onload = animateText;
+    typeText();
+});
