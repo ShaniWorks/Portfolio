@@ -3,77 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeeshan Haider</title>
+    <title>Zeeshan Haider - Senior E-Commerce Officer</title>
     <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- for icons -->
 </head>
 <body>
+
+    <!-- Header Section -->
     <header class="header">
         <a href="#" class="logo">Zeeshan Haider</a>
-        <i class='bx bx-menu' id="menu"></i>
+        <div id="menu" class="fas fa-bars"></div>
         <nav class="navbar">
-            <a href="#" style="--vlr:1">Home</a>
-            <a href="#" style="--vlr:2">About Me</a>
-            <a href="#" style="--vlr:3">Education</a>
-            <a href="#" style="--vlr:4">Skills</a>
-            <a href="#" style="--vlr:5">Contact Me</a>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact Me</a>
         </nav>
     </header>
-    <section class="home">
+
+    <!-- Home Section -->
+    <section class="home" id="home">
         <div class="text-content">
-            <h1>I'm Zeeshan Haider</h1>
+            <h1>I'm <span>Zeeshan Haider</span></h1>
             <div class="text-animation">
                 <h2>Senior E-Commerce Officer</h2>
             </div>
-            <p>Passionate about data scraping, sentiment analysis, and game development. Currently working at IZOC Solutions Pvt Ltd with extensive experience in Amazon AWS, Python, and various e-commerce platforms.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum eget ligula id gravida.</p>
             <div class="btn-section">
-                <button class="btn">Hire me</button>
+                <button class="btn">Hire Me</button>
                 <button class="btn">Let's Talk</button>
             </div>
             <div class="social-media">
-                <a href="mailto:zeeshanhaiderrajpoot@gmail.com"> <i class='bx bx-envelope' style="--clr:7"></i></a>
-                <a href="#"> <i class='bx bxl-linkedin' style="--clr:8"></i></a>
-                <a href="#"> <i class='bx bxl-github' style="--clr:9"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        <img src="my pic.png" alt="Profile Image">
+        <img src="my pic.png" alt="Zeeshan Haider">
     </section>
-    <section class="section about">
-        <div class="section-title">About Me</div>
-        <p>Enthusiastic professional with a solid background in e-commerce, data scraping, and software development. Adept at utilizing a variety of tools and technologies to deliver results.</p>
-    </section>
-    <section class="section education">
-        <div class="section-title">Education</div>
-        <div class="education-item">
-            <h3>ICS - Government Degree College (PeerPhlahi)</h3>
-            <p>Completed with focus on Computer Science and Information Technology.</p>
-        </div>
-    </section>
-    <section class="section skills">
-        <div class="section-title">Skills</div>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>Skills</h2>
         <div class="skills-container">
             <div class="skill">Python</div>
             <div class="skill">C#</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
             <div class="skill">AWS</div>
-            <div class="skill">GDscript</div>
             <div class="skill">Unity 3D</div>
             <div class="skill">Godot</div>
             <div class="skill">Amazon PPC</div>
+            <div class="skill">Walmart Listing</div>
             <div class="skill">Shopify</div>
             <div class="skill">Meta Ads</div>
         </div>
     </section>
-    <section class="section contact">
-        <div class="section-title">Contact Me</div>
-        <form class="contact-form" action="mailto:zeeshanhaiderrajpoot@gmail.com" method="post" enctype="text/plain">
+
+    <!-- About Me Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <div class="section-box">
+            <p>Hello, I'm Zeeshan Haider. I have experience in e-commerce, game development, and automation tools. I enjoy learning new technologies and optimizing workflows to improve efficiency.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="section-box">
+            <p>ICS from Government Degree College (PeerPhlahi)</p>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="submit_form.php" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message">
         </form>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>
