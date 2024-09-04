@@ -1,5 +1,5 @@
 let menubar = document.querySelector('#menu');
-let navbar = document.querySelector('.navbar'); 
+let navbar = document.querySelector('.navbar');
 
 menubar.onclick = () => {
     menubar.classList.toggle('bx-x');
@@ -13,4 +13,10 @@ let header = document.querySelector('.header');
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    if (scrollTop > lastScrollTop)
+    if (scrollTop > lastScrollTop) {
+        header.style.top = "-100px"; // Hide header
+    } else {
+        header.style.top = "0"; // Show header
+    }
+    lastScrollTop = scrollTop;
+});
