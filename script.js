@@ -1,6 +1,7 @@
-let menu = document.querySelector('#menu');
+let menubar = document.querySelector('#menu');
 let navbar = document.querySelector('.navbar');
 
-menu.onclick = () => {
+menubar.onclick = () => {
+    menubar.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-};
+}
