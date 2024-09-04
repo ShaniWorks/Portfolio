@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    background: #000;
+    background: #66D3FA;
     color: #fff;
     height: 100vh;
 }
@@ -32,6 +32,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    background: #66D3FA;
     transition: top 0.3s ease;
 }
 
@@ -85,8 +86,8 @@ body {
     font-size: 3.2rem;
     font-weight: 700;
     color: transparent;
-    -webkit-text-stroke: .7px #00f;
-    background: linear-gradient(#00f, #00f);
+    -webkit-text-stroke: .7px #fff;
+    background: linear-gradient(#fff, #fff);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-position: -33rem 0;
@@ -128,26 +129,59 @@ body {
     transform: scale(1.1);
 }
 
-.skills-section, .about-me-section, .education-section {
+.skills-section, .about-me-section, .education-section, .contact-section {
     padding: 5rem 9%;
-    background: #000;
+    background: #66D3FA;
 }
 
-.skills-section h2, .about-me-section h2, .education-section h2 {
+.skills-section h2, .about-me-section h2, .education-section h2, .contact-section h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
 }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .skill-item {
-    background: #00f;
+    background: #fff;
+    color: #000;
     padding: 1rem 2rem;
-    margin: 1rem 0;
     border-radius: 0.5rem;
     transition: transform 0.3s ease-in-out;
 }
 
 .skill-item:hover {
     transform: scale(1.05);
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-section input, .contact-section textarea {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.contact-section button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #00f;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-section button:hover {
+    background: #0077ff;
 }
 
 /* RESPONSIVE */
@@ -171,7 +205,7 @@ body {
         top: 100%;
         width: 0;
         padding: 1rem 3%;
-        background: #000;
+        background: #66D3FA;
         border-top: 1px solid #00f;
         opacity: 0;
         transition: .5s ease;
