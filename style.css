@@ -13,6 +13,7 @@ body {
     color: #fff; /* White text */
 }
 
+/* Header */
 .header {
     position: fixed;
     left: 0;
@@ -23,6 +24,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: top 0.3s ease;
 }
 
 #menu {
@@ -51,6 +53,7 @@ body {
     color: #ffcc00; /* Accent color on hover */
 }
 
+/* Home Section */
 .home {
     padding: 10rem 9% 2rem;
     min-height: 100vh;
@@ -107,7 +110,6 @@ body {
     0% {
         width: 100%;
     }
-
     100% {
         width: 0;
     }
@@ -193,17 +195,7 @@ body {
     top: 0;
 }
 
-.section {
-    padding: 5rem 10%;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #66D3FA; /* Blue color */
-    margin-bottom: 2rem;
-}
-
+/* Skills Section */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -217,8 +209,37 @@ body {
     border-radius: 5px;
     font-size: 1.2rem;
     flex: 1 1 calc(33.333% - 2rem);
+    transition: transform 0.3s ease;
 }
 
+.skill:hover {
+    transform: scale(1.1); /* Zoom on hover */
+}
+
+/* Box styling for About Me and Education sections */
+.section-box {
+    padding: 2rem;
+    border: 2px solid #66D3FA; /* Blue border */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-box:hover {
+    transform: scale(1.05); /* Zoom on hover */
+}
+
+/* Animation for box sections when scrolling */
+.box-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -246,7 +267,6 @@ body {
 }
 
 /* RESPONSIVE */
-
 @media(max-width:1200px) {
     html {
         font-size: 55%;
