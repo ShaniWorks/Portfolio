@@ -1,28 +1,38 @@
-let menubar = document.querySelector('#menu');
-let navbar = document.querySelector('.navbar');
+document.addEventListener("DOMContentLoaded", function () {
+    // Text Typing Animation
+    const text = "I'm Zeeshan Haider Senior E-Commerce Officer";
+    const typingSpeed = 100; // Speed in milliseconds
 
-menubar.onclick = () => {
-    menubar.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
+    let index = 0;
 
-// Animation for text "I'm Zeeshan Haider, Senior E-Commerce Officer"
-const animatedText = document.querySelector('.text-animation h2');
-const text = "I'm Zeeshan Haider, Senior E-Commerce Officer";
-let index = 0;
-
-function animateText() {
-    if (index < text.length) {
-        animatedText.textContent += text.charAt(index);
-        index++;
-        setTimeout(animateText, 100);
-    } else {
-        setTimeout(() => {
-            animatedText.textContent = '';
-            index = 0;
-            animateText();
-        }, 3000);
+    function typeText() {
+        if (index < text.length) {
+            document.getElementById("typing-text").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeText, typingSpeed);
+        }
     }
-}
 
-window.onload = animateText;
+    typeText();
+
+    // Responsive Navbar Toggle
+    let menu = document.querySelector('#menu');
+    let navbar = document.querySelector('.navbar');
+
+    menu.onclick = () => {
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    }
+
+    // Scroll Behavior for Links
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        });
+    });
+});
