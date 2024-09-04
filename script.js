@@ -7,16 +7,16 @@ menubar.onclick = () => {
 };
 
 // Header hide on scroll
-let lastScrollTop = 0;
-let header = document.querySelector('.header');
+let prevScrollPos = window.pageYOffset;
+const header = document.querySelector('.header');
 
-window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop) {
-        header.style.top = "-100px"; // Hide header
+window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        header.classList.remove('hidden');
     } else {
-        header.style.top = "0"; // Show header
+        header.classList.add('hidden');
     }
-    lastScrollTop = scrollTop;
-});
+    prevScrollPos = currentScrollPos;
+};
+
