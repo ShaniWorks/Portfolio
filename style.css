@@ -43,7 +43,7 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.skills-section .skill-item:hover {
+.skills-section .skills-container:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
 }
